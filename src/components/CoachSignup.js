@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import CoachLogin from './CoachLogin';
 
 const CoachSignup = () => {
     const [data, setData] = useState({
@@ -12,6 +13,8 @@ const CoachSignup = () => {
         speciality:""
     });
 
+    const [userAge, setUserAge] = useState(0);
+
     const [error, setError] = useState(false);
 
     const handleChange = (event) => {
@@ -19,7 +22,7 @@ const CoachSignup = () => {
         setData({...data, [name]:value})  
         
     }
-    var newAge = 0;
+    
     function calculateAge() {
         const newDate = new Date();
         const birthDate = new Date(data.dob);
@@ -37,23 +40,26 @@ const CoachSignup = () => {
         
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event) => {      
         event.preventDefault();
-        
-        let newCoach = { id:data.id, name: data.username, password: data.pwd, gender: data.gender, dateOfBirth: data.dob, mobileNumber: data.mobile, speciality: data.speciality}
-        newAge = calculateAge();
-        
-        if(data.username.length < 3 || data.pwd.length < 5 || newAge<20 || newAge>100 || data.mobile.length<10 || data.gender.length==0) {
+
+        var age = calculateAge();
+        setUserAge(age);
+        if(data.username.length < 3 || data.pwd.length < 5 || userAge<20 || userAge>100 || data.mobile.length<10 || data.gender.length==0) {
             setError(true);
         }
-        
-        axios.post("http://localhost:4000/coaches", newCoach)
-        .then(res => {
-            console.log(res.data);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+
+        if(!(data.username.length < 3 || data.pwd.length < 5 || userAge<20 || userAge>100 || data.mobile.length<10 || data.gender.length==0)) {
+            let newCoach = { id:data.id, name: data.username, password: data.pwd, gender: data.gender, dateOfBirth: data.dob, mobileNumber: data.mobile, speciality: data.speciality}
+
+            axios.post("http://localhost:3000/coaches", newCoach)
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        }
     }
     return (
         <>
@@ -85,8 +91,8 @@ const CoachSignup = () => {
                         <label htmlFor="dob" className="block">Date Of Birth</label>
                         <input type="date" onChange={handleChange} name="dob" id="dob" className="block border-2 border-black"/>
                         
-                        {error && data.dob.length!=0 && (newAge<20||newAge>100)?
-                        <label className="text-red-600 block">Age should be between 20 and 100 years</label>:""}
+                        {error && data.dob.length!=0 && (userAge<20||userAge>100)?
+                        <label className="text-red-600 block">{userAge} Age should be between 20 and 100 years</label>:""}
                         {error && data.dob.length==0?
                         <label className="text-red-600 block">DOB can't be empty</label>:""}
 
