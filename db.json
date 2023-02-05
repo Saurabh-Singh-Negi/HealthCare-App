@@ -23,6 +23,24 @@
       "dateOfBirth": "1996-01-01",
       "mobileNumber": 1234567890,
       "speciality": "Confidence Issues"
+    },
+    {
+      "id": 2,
+      "name": "sadsa",
+      "password": "dafdsfsdf",
+      "gender": "male",
+      "dateOfBirth": "1998-07-16",
+      "mobileNumber": "8093633394",
+      "speciality": "csdfadsfsdfd"
+    },
+    {
+      "id": 3,
+      "name": "saurabh",
+      "password": "saurabh",
+      "gender": "male",
+      "dateOfBirth": "1998-06-16",
+      "mobileNumber": "8093633394",
+      "speciality": "travelling"
     }
   ],
   "bookings": [
