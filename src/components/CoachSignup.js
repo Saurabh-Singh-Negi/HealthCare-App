@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import CoachLogin from './CoachLogin';
+import { Link } from 'react-router-dom';
 
 const CoachSignup = () => {
     const [data, setData] = useState({
@@ -65,7 +66,7 @@ const CoachSignup = () => {
         <>
             <div>
                 <nav className="flex justify-between bg-[#111] text-white p-4">
-                    <h1 className="font-bold text-xl">WeCare</h1>
+                <Link to="/"><h1 className="font-bold text-xl cursor-pointer">WeCare</h1></Link>
                     <p>Call Us: 123 123434443</p>
                 </nav>
 

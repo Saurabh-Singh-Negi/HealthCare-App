@@ -1,5 +1,6 @@
 import user from '../images/user.svg';
 import CoachLogin from './CoachLogin';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -7,7 +8,7 @@ const Home = () => {
             <div className="container">
 
                 <nav className="flex justify-between bg-[#111] text-white p-4">
-                    <h1 className="font-bold text-xl">WeCare</h1>
+                <Link to="/"><h1 className="font-bold text-xl cursor-pointer">WeCare</h1></Link>
                     <p>Call Us: 123 123434443</p>
                 </nav>
 
@@ -20,10 +21,10 @@ const Home = () => {
                         <div className="text-white bg-black  w-1/6 p-10 flex flex-col  items-center gap-4">
                             <img src={user} alt="this is image" />
                             <div className="bg-[#06B6D4] py-2 px-6">
-                                <button onClick={ CoachLogin }>Login as a Coach</button>
+                                <Link to="/CoachLogin"><button onClick={ CoachLogin }>Login as a Coach</button></Link>
                             </div>
                             <div className="bg-[#06B6D4] py-2 px-6">
-                                <button>Join as a Coach </button>
+                            <Link to="/CoachSignup"><button>Join as a Coach </button></Link>
                             </div>
                         </div>
                         <div className="text-white bg-black w-1/6 p-10 flex flex-col  items-center gap-4">

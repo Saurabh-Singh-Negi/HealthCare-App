@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
+
 
 const CoachLogin = () => {
   const [error, setError] = useState();
   const [status, setStatus] = useState();
   const [id, setId] = useState("");
   const [pwd, setPwd] = useState("");
+  const navigate = useNavigate();
 
   function HandleSubmit(event) {
     event.preventDefault();
@@ -18,7 +21,10 @@ const CoachLogin = () => {
         .get("http://localhost:3000/coaches" + "?id=" + id + "&password=" + pwd)
         .then((res) => {
           console.log(res.data);
-          if(res.data.length>0) setStatus(false);
+          if(res.data.length>0) {
+            setStatus(false);
+            navigate("/coachdashboard");
+        }
           else setStatus(true);
         })
         .catch((error) => {
@@ -29,7 +35,7 @@ const CoachLogin = () => {
   return (
     <>
       <nav className="flex justify-between bg-[#111] text-white p-4">
-        <h1 className="font-bold text-xl">WeCare</h1>
+      <Link to="/"><h1 className="font-bold text-xl cursor-pointer">WeCare</h1></Link>
         <p>Call Us: 123 123434443</p>
       </nav>
 
