@@ -44,7 +44,7 @@ const CoachHome = () => {
       <div>
         {data.map((ele) => {
           return (
-            <div key={ele.id} className="flex flex-col text-white bg-black items-center mx-auto my-4 w-1/4 border-2 border-red-600">
+            <div key={ele.id} className="flex flex-col text-white bg-black items-center mx-auto my-4 w-1/4 border-2 border-red-600 cursor-pointer">
               <p>Appointment: {ele.appointmentDate}</p>
               <p>Slot: {ele.slot}</p>
               <p>Booking Id: {ele.id}</p>
