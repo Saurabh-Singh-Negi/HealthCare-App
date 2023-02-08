@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
 import CoachLogin from './CoachLogin';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 const CoachHome = () => {
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
     
     const [id, setId] = useState("");
     const [data, setData] = useState([]);
     const [status, setStatus] = useState(false);
     useEffect(() => {
         let coachId = sessionStorage.getItem('id');
-        if(coachId === '' || coachId === null) {
-            Navigate('/');
+        if(coachId === "" || coachId === null) {
+            navigate('/');
         }
         else {
             setId(coachId);
@@ -38,7 +37,10 @@ const CoachHome = () => {
           <h1 className="font-bold text-xl cursor-pointer">WeCare</h1>
         </Link>
         
+        <div className='flex flex-row gap-4'>
+        <Link to="/">Logout</Link>
         <p>Call Us: 123 123434443</p>
+      </div>
       </nav>
 
       <div>
