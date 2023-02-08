@@ -4,6 +4,11 @@ import { useNavigate, Link } from "react-router-dom";
 
 
 const CoachLogin = () => {
+
+    useEffect(() => {
+        sessionStorage.clear();
+    },[]);
+
   const [error, setError] = useState();
   const [status, setStatus] = useState();
   const [id, setId] = useState("");
@@ -23,6 +28,7 @@ const CoachLogin = () => {
           console.log(res.data);
           if(res.data.length>0) {
             setStatus(false);
+            sessionStorage.setItem("id", id);
             navigate("/coachdashboard");
         }
           else setStatus(true);

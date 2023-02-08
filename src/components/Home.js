@@ -20,20 +20,20 @@ const Home = () => {
                     <div className="flex gap-2 justify-center">
                         <div className="text-white bg-black  w-1/6 p-10 flex flex-col  items-center gap-4">
                             <img src={user} alt="this is image" />
-                            <div className="bg-[#06B6D4] py-2 px-6">
-                                <Link to="/CoachLogin"><button onClick={ CoachLogin }>Login as a Coach</button></Link>
+                            <div className="bg-[#06B6D4] w-44 h-10 text-center">
+                                <Link to="/CoachLogin"><button className="bg-[#06B6D4] w-44 h-10">Login as a Coach</button></Link>
                             </div>
-                            <div className="bg-[#06B6D4] py-2 px-6">
-                            <Link to="/CoachSignup"><button>Join as a Coach </button></Link>
+                            <div className="bg-[#06B6D4] w-44 h-10 text-center">
+                                <Link to="/CoachSignup"><button className="bg-[#06B6D4] w-44 h-10">Join as a Coach </button></Link>
                             </div>
                         </div>
                         <div className="text-white bg-black w-1/6 p-10 flex flex-col  items-center gap-4">
                             <img src={user} alt="this is image" />
                             <div>
-                                <button className="bg-[#06B6D4] py-2 px-6">Login as a User</button>
+                                <button className="bg-[#06B6D4] w-44 h-10">Login as a User</button>
                             </div>
                             <div>
-                                <button className="bg-[#06B6D4] py-2 px-6">Join as a User</button>
+                                <button className="bg-[#06B6D4] w-44 h-10 text-center ">Join as a User</button>
                             </div>
                         </div>
 
