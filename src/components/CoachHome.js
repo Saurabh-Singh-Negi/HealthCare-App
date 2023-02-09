@@ -38,8 +38,10 @@ const CoachHome = () => {
         </Link>
         
         <div className='flex flex-row gap-4'>
-        <Link to="/">Logout</Link>
+        <Link to="/coachviewprofile">View Profile</Link>
+        <Link to="/coachdashboard">My Schedule</Link>
         <p>Call Us: 123 123434443</p>
+        <Link to="/">Logout</Link>
       </div>
       </nav>
 
