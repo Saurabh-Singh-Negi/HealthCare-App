@@ -34,7 +34,7 @@ const Home = () => {
                                 <button className="bg-[#06B6D4] w-44 h-10">Login as a User</button>
                             </div>
                             <div>
-                                <button className="bg-[#06B6D4] w-44 h-10 text-center ">Join as a User</button>
+                                <Link to="/usersignup"><button className="bg-[#06B6D4] w-44 h-10 text-center ">Join as a User</button></Link>
                             </div>
                         </div>
 

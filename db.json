@@ -12,6 +12,19 @@
       "city": "Bangalore",
       "state": "Karnataka",
       "country": "India"
+    },
+    {
+      "id": 2,
+      "name": "saurabh",
+      "password": "",
+      "gender": "",
+      "dateOfBirth": "",
+      "email": "",
+      "mobileNumber": "",
+      "pincode": "",
+      "city": "",
+      "state": "",
+      "country": ""
     }
   ],
   "coaches": [
