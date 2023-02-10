@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
  
 const UserSignup = () => {
+    const [error, setError] = useState(false);
     const [data, setData] = useState(
         {
             username:"",

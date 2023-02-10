@@ -5,6 +5,8 @@ import CoachLogin from './components/CoachLogin';
 import CoachHome from './components/CoachHome';
 import Coachviewprofile from './components/Coachviewprofile';
 import UserSignup from './components/UserSignup';
+import UserLogin from './components/UserLogin';
+import UserDashboard from './components/UserDashboard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -18,7 +20,10 @@ function App() {
           <Route path="coachsignup" element={<CoachSignup/>}/>
           <Route path="coachviewprofile" element={<Coachviewprofile/>}/>
           <Route path="usersignup" element={<UserSignup/>}/>
-          <Route />
+          <Route path="dashboard" element={<UserDashboard/>}/>
+          <Route path="userlogin" element={<UserLogin/>}/>
+          {/* <Route path="userdashboard" element={<UserDashboard/>}/> */}
+          
         </Routes>
       </BrowserRouter>
     </>

@@ -14,18 +14,19 @@
       "country": "India"
     },
     {
-      "id": 2,
+      "id": 5,
       "name": "saurabh",
-      "password": "",
-      "gender": "",
-      "dateOfBirth": "",
-      "email": "",
-      "mobileNumber": "",
-      "pincode": "",
-      "city": "",
-      "state": "",
-      "country": ""
+      "password": "saurabh",
+      "gender": "male",
+      "dateOfBirth": "1990-06-16",
+      "email": "saurabh@gmail.com",
+      "mobileNumber": "123456",
+      "pincode": "124",
+      "city": "asd",
+      "state": "sadaf",
+      "country": "dsa"
     }
+    
   ],
   "coaches": [
     {

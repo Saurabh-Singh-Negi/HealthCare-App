@@ -31,7 +31,7 @@ const Home = () => {
                         <div className="text-white bg-black w-1/6 p-10 flex flex-col  items-center gap-4">
                             <img src={user} alt="this is image" />
                             <div>
-                                <button className="bg-[#06B6D4] w-44 h-10">Login as a User</button>
+                                <Link to="/userlogin"><button className="bg-[#06B6D4] w-44 h-10">Login as a User</button></Link>
                             </div>
                             <div>
                                 <Link to="/usersignup"><button className="bg-[#06B6D4] w-44 h-10 text-center ">Join as a User</button></Link>
