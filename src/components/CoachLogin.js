@@ -5,9 +5,9 @@ import { useNavigate, Link } from "react-router-dom";
 
 const CoachLogin = () => {
 
-    useEffect(() => {
-        sessionStorage.clear();
-    },[]);
+  useEffect(() => {
+    sessionStorage.clear();
+},[]);
 
   const [error, setError] = useState();
   const [status, setStatus] = useState();

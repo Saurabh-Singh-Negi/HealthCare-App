@@ -3,6 +3,7 @@ import axios from 'axios';
 import CoachLogin from './CoachLogin';
 import { useNavigate, Link } from 'react-router-dom';
 const CoachHome = () => {
+  
     const navigate = useNavigate();
     
     const [id, setId] = useState("");
@@ -11,6 +12,7 @@ const CoachHome = () => {
     useEffect(() => {
         let coachId = sessionStorage.getItem('id');
         if(coachId === "" || coachId === null) {
+          
             navigate('/');
         }
         else {
@@ -41,7 +43,7 @@ const CoachHome = () => {
         <Link to="/coachviewprofile">View Profile</Link>
         <Link to="/coachdashboard">My Schedule</Link>
         <p>Call Us: 123 123434443</p>
-        <Link to="/">Logout</Link>
+        <Link to="/coachlogin">Logout</Link>
       </div>
       </nav>
 
