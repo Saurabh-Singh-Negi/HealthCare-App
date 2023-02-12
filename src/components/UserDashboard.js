@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, useLocation} from "react-router-dom";
 import user from "../images/user.svg"
 
 const UserDashboard = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [coaches, setCoaches] = useState([]);
   var a = 20;
   useEffect(() => {
@@ -49,7 +50,10 @@ const UserDashboard = () => {
                     <p>Speciality:{ele.speciality}</p>
                     <button type='submit' className='bg-green-600' onClick={(event) => {
 
-                        navigate("/bookappointment", {state: {coachId: ele.id}})
+                        navigate("/bookappointment", {state: {
+                          coachId: ele.id,
+                          userId: location.state.userId
+                        }})
                       }}>Book appointment</button>
                   </div>
                 </div>

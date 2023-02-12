@@ -20,7 +20,7 @@ const Login = () => {
         .then(res => {
             
             if(res.data.length > 0) {
-                navigate("/dashboard");
+                navigate("/dashboard", {state: {userId: res.data[0].id}});
                 console.log("success")
                 console.log(res.data);
             }
