@@ -7,6 +7,7 @@ import Coachviewprofile from './components/Coachviewprofile';
 import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin';
 import UserDashboard from './components/UserDashboard';
+import BookAppointment from './components/BookAppointment';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -22,8 +23,7 @@ function App() {
           <Route path="usersignup" element={<UserSignup/>}/>
           <Route path="dashboard" element={<UserDashboard/>}/>
           <Route path="userlogin" element={<UserLogin/>}/>
-          {/* <Route path="userdashboard" element={<UserDashboard/>}/> */}
-          
+          <Route path="bookappointment" element={<BookAppointment/>}/>
         </Routes>
       </BrowserRouter>
     </>

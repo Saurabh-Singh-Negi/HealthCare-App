@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import user from "../images/user.svg"
 
 const UserDashboard = () => {
+  const navigate = useNavigate();
   const [coaches, setCoaches] = useState([]);
+  var a = 20;
   useEffect(() => {
     axios.get("http://localhost:3000/coaches")
     .then(res => {
@@ -16,6 +18,10 @@ const UserDashboard = () => {
       console.log(error);
     })
   },[]);
+
+  function handleAppointment(event) {
+    console.log(event.target.value);
+  }
 
   return (
     <>
@@ -32,7 +38,7 @@ const UserDashboard = () => {
         <div >
           {coaches.map((ele) => {
               return (
-                <div key={ele.id} className="flex flex-row text-white bg-black items-center mx-auto my-4 w-1/4 border-2 border-red-600 cursor-pointer">
+                <div key={ele.id} className="flex flex-row text-white bg-black items-center mx-auto my-4 w-1/4 border-2 border-red-600">
                   <div>
                     <img src={user}  alt="user pic" />
                   </div>
@@ -41,6 +47,10 @@ const UserDashboard = () => {
                     <p>Coach id:{ele.id}</p>
                     <p>Mobile No.{ele.mobileNumber}</p>
                     <p>Speciality:{ele.speciality}</p>
+                    <button type='submit' className='bg-green-600' onClick={(event) => {
+
+                        navigate("/bookappointment", {state: {coachId: ele.id}})
+                      }}>Book appointment</button>
                   </div>
                 </div>
               ) 
