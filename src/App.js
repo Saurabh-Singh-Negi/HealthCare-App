@@ -8,6 +8,7 @@ import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin';
 import UserDashboard from './components/UserDashboard';
 import BookAppointment from './components/BookAppointment';
+import ConfirmAppointment from './components/ConfirmAppointment';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="dashboard" element={<UserDashboard/>}/>
           <Route path="userlogin" element={<UserLogin/>}/>
           <Route path="bookappointment" element={<BookAppointment/>}/>
+          <Route path="confirmappointment" element={<ConfirmAppointment/>}/>
         </Routes>
       </BrowserRouter>
     </>

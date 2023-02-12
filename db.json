@@ -121,6 +121,13 @@
       "userId": 5,
       "coachId": 3,
       "id": 8
+    },
+    {
+      "appointmentDate": "2023-02-13",
+      "slot": "10AM to 11AM",
+      "userId": 5,
+      "coachId": 3,
+      "id": 9
     }
   ]
 }

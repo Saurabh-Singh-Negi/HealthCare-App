@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import UserDashboard from './UserDashboard';
 import axios from 'axios';
 
 const BookAppointment = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const [data, setData] = useState({
         appointmentDate:"",
         slot:""
@@ -21,6 +22,7 @@ const BookAppointment = () => {
         axios.post("http://localhost:3000/bookings", bookingDetails)
         .then(res => {
             console.log("success", res.data);
+            navigate("/confirmappointment");
         })
         .catch(error => {
             console.log(error);
