@@ -39,7 +39,7 @@ const Login = () => {
                     <p>Call Us: 123 123434443</p>
                 </nav>
 
-                <div>
+                <div className="bg-black w-[400px] text-white text-lg mx-auto flex flex-col justify-center ">
                     <h1 className="text-center">User Login</h1>
                     <form className="flex flex-col w-1/6 mx-auto">
                         <label htmlFor="email">Email</label>

@@ -32,7 +32,16 @@ const UserDashboard = () => {
         <Link to="/">
           <h1 className="font-bold text-xl cursor-pointer">WeCare</h1>
         </Link>
-        </nav>
+        
+        <div className='flex flex-row gap-4'>
+        <Link to="/">View Profile</Link>
+        <button onClick={() => {
+          navigate("/userappointments", {state: {userId: location.state.userId}})
+        }}>My Appointment</button>
+        <p>Call Us: 123 123434443</p>
+        <Link to="/coachlogin">Logout</Link>
+      </div>
+      </nav>
 
         
 

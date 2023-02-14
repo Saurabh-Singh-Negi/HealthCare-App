@@ -9,6 +9,7 @@ const Coachviewprofile = () => {
     const [data, setData] = useState([]);
     const [status, setStatus] = useState(false);
     useEffect(() => {
+        
         const coachId = sessionStorage.getItem('id');
         if(coachId == "" || coachId == null) {
             navigate("/");

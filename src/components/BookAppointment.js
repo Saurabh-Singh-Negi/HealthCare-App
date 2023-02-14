@@ -19,10 +19,24 @@ const BookAppointment = () => {
     function handleSubmit(event) {
         event.preventDefault();
         const bookingDetails = {appointmentDate: data.appointmentDate, slot: data.slot, userId: location.state.userId, coachId: location.state.coachId};
+        
         axios.post("http://localhost:3000/bookings", bookingDetails)
         .then(res => {
             console.log("success", res.data);
             navigate("/confirmappointment");
+        })
+        .catch(error => {
+            console.log(error);
+        })   
+    }
+
+    function handleReschedule(event) {
+        
+        event.preventDefault();
+        const bookingDetails = {appointmentDate: data.appointmentDate, slot: data.slot, userId: location.state.userId, coachId: location.state.coachId};
+        axios.patch("http://localhost:3000/bookings/:id="+ location.state.bookingId + "/"  + bookingDetails)
+        .then(res => {
+            console.log("successfuly edited", res.data);
         })
         .catch(error => {
             console.log(error);
@@ -50,7 +64,10 @@ const BookAppointment = () => {
             <input type="radio" onClick={handleChange} value="4AM to 5AM" name='slot' /> 4AM to 5AM
             </label>
 
+            {location.state.action != "edit" ?
             <button type='submit' onClick={handleSubmit} className='bg-green-600'>Confirm your appointment</button>
+            :<button type='submit' onClick={handleReschedule} className='bg-green-600'>Reschedule your appointment</button>
+        }
         </form>
     </>
   )
