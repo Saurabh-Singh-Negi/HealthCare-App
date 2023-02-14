@@ -6,21 +6,22 @@ const Home = () => {
     
     return (
         <>
-            <div className="container">
+            <div className="flex flex-col justify-between min-h-screen bg-[#CAD5E2] w-full">
 
                 <nav className="flex justify-between bg-[#111] text-white p-4">
-                <Link to="/"><h1 className="font-bold text-xl cursor-pointer">WeCare</h1></Link>
+                    <Link to="/"><h1 className="font-bold text-xl cursor-pointer">WeCare</h1></Link>
                     <p>Call Us: 123 123434443</p>
                 </nav>
 
-                <main className="bg-[#CAD5E2] h-screen">
-                    <h1 className="text-4xl font-semibold text-center py-20 ">
-                        We are at the heart of appropriate care
+                <main className='sm:mb-4'>
+                    <h1 className="text-2xl sm:text-4xl font-semibold text-center py-10 ">
+                        We are at the heart
+                        <span className='block sm:inline'>of appropriate care</span> 
                     </h1>
 
-                    <div className="flex gap-2 justify-center">
-                        <div className="text-white bg-black  w-1/6 p-10 flex flex-col  items-center gap-4">
-                            <img src={user} alt="this is image" />
+                    <div className="flex flex-col items-center sm:flex-row gap-2 justify-center mb-4">
+                        <div className="text-white bg-black w-[250px] sm:w-[300px] p-10 flex flex-col items-center gap-4">
+                            <img src={user} alt="user image" />
                             <div className="bg-[#06B6D4] w-44 h-10 text-center">
                                 <Link to="/CoachLogin"><button className="bg-[#06B6D4] w-44 h-10">Login as a Coach</button></Link>
                             </div>
@@ -28,7 +29,7 @@ const Home = () => {
                                 <Link to="/CoachSignup"><button className="bg-[#06B6D4] w-44 h-10">Join as a Coach </button></Link>
                             </div>
                         </div>
-                        <div className="text-white bg-black w-1/6 p-10 flex flex-col  items-center gap-4">
+                        <div className="text-white bg-black w-[250px] sm:w-[300px] p-10 flex flex-col  items-center gap-4">
                             <img src={user} alt="this is image" />
                             <div>
                                 <Link to="/userlogin"><button className="bg-[#06B6D4] w-44 h-10">Login as a User</button></Link>
@@ -41,8 +42,8 @@ const Home = () => {
                     </div>
                 </main>
 
-                <footer className="bg-[#111] text-white text-center p-5">
-                    <p>Copyright &copy 2023, WeCare. All rights reserved.</p>
+                <footer className="bg-[#111] text-white text-center p-5 mt-auto">
+                    <p>Copyright &copy; 2023, WeCare. All rights reserved.</p>
                 </footer>
             </div>
 
