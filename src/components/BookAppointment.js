@@ -33,8 +33,8 @@ const BookAppointment = () => {
     function handleReschedule(event) {
         
         event.preventDefault();
-        const bookingDetails = {appointmentDate: data.appointmentDate, slot: data.slot, userId: location.state.userId, coachId: location.state.coachId};
-        axios.patch("http://localhost:3000/bookings/:id="+ location.state.bookingId + "/"  + bookingDetails)
+        const bookingDetails = {appointmentDate: data.appointmentDate, slot: data.slot};
+        axios.patch("http://localhost:3000/bookings/"+ location.state.bookingId,  bookingDetails)
         .then(res => {
             console.log("successfuly edited", res.data);
         })
