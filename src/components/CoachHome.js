@@ -2,10 +2,13 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CoachLogin from './CoachLogin';
 import { useNavigate, Link } from 'react-router-dom';
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import CoachNavbar from "./CoachNavbar";
+
 const CoachHome = () => {
   
-    const navigate = useNavigate();
-    
+    const navigate = useNavigate();    
     const [id, setId] = useState("");
     const [data, setData] = useState([]);
     const [status, setStatus] = useState(false);
@@ -34,23 +37,13 @@ const CoachHome = () => {
     
   return (
     <>
-      <nav className="flex justify-between bg-[#111] text-white p-4">
-        <Link to="/">
-          <h1 className="font-bold text-xl cursor-pointer">WeCare</h1>
-        </Link>
-        
-        <div className='flex flex-row gap-4'>
-        <Link to="/coachviewprofile">View Profile</Link>
-        <Link to="/coachdashboard">My Schedule</Link>
-        <p>Call Us: 123 123434443</p>
-        <Link to="/coachlogin">Logout</Link>
-      </div>
-      </nav>
+    <div className="flex flex-col justify-between min-h-screen bg-[#CAD5E2] w-full">
+      <CoachNavbar />
 
-      <div>
+      <div className='flex flex-col md:flex-row md:flex-wrap w-[90%] sm:w-[70%] mx-auto gap-2'>
         {data.map((ele) => {
           return (
-            <div key={ele.id} className="flex flex-col text-white bg-black items-center mx-auto my-4 w-1/4 border-2 border-red-600 cursor-pointer">
+            <div key={ele.id} className="flex flex-col rounded-lg text-white bg-black justify-center sm:font-semibold text-xl items-center mx-auto my-4 h-[150px] p-2 sm:p-0 w-100 md:w-1/3 border-2 border-red-600 cursor-pointer">
               <p>Appointment: {ele.appointmentDate}</p>
               <p>Slot: {ele.slot}</p>
               <p>Booking Id: {ele.id}</p>
@@ -58,6 +51,9 @@ const CoachHome = () => {
             </div>
           )
         })}
+      </div>
+
+      <Footer/>
       </div>
       
     </>

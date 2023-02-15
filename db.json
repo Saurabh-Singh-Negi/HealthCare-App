@@ -142,6 +142,27 @@
       "userId": 5,
       "coachId": 3,
       "id": 9
+    },
+    {
+      "appointmentDate": "2023-02-19",
+      "slot": "9AM to 10AM",
+      "userId": 5,
+      "coachId": 3,
+      "id": 10
+    },
+    {
+      "appointmentDate": "2023-02-19",
+      "slot": "9AM to 10AM",
+      "userId": 5,
+      "coachId": 3,
+      "id": 11
+    },
+    {
+      "appointmentDate": "2023-02-19",
+      "slot": "9AM to 10AM",
+      "userId": 5,
+      "coachId": 3,
+      "id": 11
     }
   ]
 }
