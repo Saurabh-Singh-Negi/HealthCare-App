@@ -63,6 +63,69 @@
       "dateOfBirth": "1986-02-24",
       "mobileNumber": "12345678",
       "speciality": "CSE"
+    },
+    {
+      "id": 5,
+      "name": "sweety",
+      "password": "sweety",
+      "gender": "female",
+      "dateOfBirth": "1990-06-16",
+      "mobileNumber": "1234567891",
+      "speciality": "asdfegght"
+    },
+    {
+      "id": 6,
+      "name": "shubham",
+      "password": "shubham",
+      "gender": "male",
+      "dateOfBirth": "1990-02-25",
+      "mobileNumber": "1234567890",
+      "speciality": "abcdefghij"
+    },
+    {
+      "id": 7,
+      "name": "shubham",
+      "password": "shubham",
+      "gender": "male",
+      "dateOfBirth": "1990-02-25",
+      "mobileNumber": "1234567890",
+      "speciality": "abcdefghij"
+    },
+    {
+      "id": 8,
+      "name": "qwer",
+      "password": "qwerrewwe",
+      "gender": "male",
+      "dateOfBirth": "1998-06-16",
+      "mobileNumber": "1234567890",
+      "speciality": "travelling"
+    },
+    {
+      "id": 9,
+      "name": "qwer",
+      "password": "qwerrewwe",
+      "gender": "male",
+      "dateOfBirth": "1998-06-16",
+      "mobileNumber": "1234567890",
+      "speciality": "travelling"
+    },
+    {
+      "id": 10,
+      "name": "qwer",
+      "password": "qwerrewwe",
+      "gender": "male",
+      "dateOfBirth": "1998-06-16",
+      "mobileNumber": "1234567890",
+      "speciality": "travelling"
+    },
+    {
+      "id": 11,
+      "name": "asdasd",
+      "password": "asdafasfadf",
+      "gender": "male",
+      "dateOfBirth": "1998-06-16",
+      "mobileNumber": "1234567890",
+      "speciality": "travelling"
     }
   ],
   "bookings": [

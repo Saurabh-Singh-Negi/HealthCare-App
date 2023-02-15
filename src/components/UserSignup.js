@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
  
 const UserSignup = () => {
+    const navigate = useNavigate();
     const [error, setError] = useState(false);
     const [data, setData] = useState(
         {
@@ -29,7 +30,10 @@ const UserSignup = () => {
         const userDetails = {id:"", name:data.username, password:data.pwd, gender:data.gender, dateOfBirth:data.dob, email:data.email, mobileNumber:data.mobile,pincode:data.pin,city:data.city,state:data.state,country:data.country}
         axios.post("http://localhost:3000/users", userDetails)
         .then(res => {
-            console.log(res.data);
+            navigate("/registerconfirmation", {state: {
+                userId: res.data.id,
+                action: "user"
+              }});
         })
         .catch(error => {
             console.log(error);

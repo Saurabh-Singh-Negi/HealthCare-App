@@ -10,6 +10,7 @@ import UserDashboard from './components/UserDashboard';
 import BookAppointment from './components/BookAppointment';
 import ConfirmAppointment from './components/ConfirmAppointment';
 import UserAppointments from './components/UserAppointments';
+import RegisterConfirmation from './components/RegisterConfirmation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="bookappointment" element={<BookAppointment/>}/>
           <Route path="confirmappointment" element={<ConfirmAppointment/>}/>
           <Route path="userappointments" element={<UserAppointments/>}/>
+          <Route path="registerconfirmation" element={<RegisterConfirmation/>}/>
         </Routes>
       </BrowserRouter>
     </>

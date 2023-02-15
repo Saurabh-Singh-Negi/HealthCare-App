@@ -2,16 +2,15 @@ import user from '../images/user.svg';
 import CoachLogin from './CoachLogin';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import Navbar from './Navbar';
+import Footer from './Footer';
 const Home = () => {
     
     return (
         <>
             <div className="flex flex-col justify-between min-h-screen bg-[#CAD5E2] w-full">
 
-                <nav className="flex justify-between bg-[#111] text-white p-4">
-                    <Link to="/"><h1 className="font-bold text-xl cursor-pointer">WeCare</h1></Link>
-                    <p>Call Us: 123 123434443</p>
-                </nav>
+                <Navbar />
 
                 <main className='sm:mb-4'>
                     <h1 className="text-2xl sm:text-4xl font-semibold text-center py-10 ">
@@ -42,9 +41,7 @@ const Home = () => {
                     </div>
                 </main>
 
-                <footer className="bg-[#111] text-white text-center p-5 mt-auto">
-                    <p>Copyright &copy; 2023, WeCare. All rights reserved.</p>
-                </footer>
+                <Footer/>
             </div>
 
 
