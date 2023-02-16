@@ -1,8 +1,14 @@
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-const Login = () => {
+const UserLogin = () => {
+    useEffect(() => {
+        sessionStorage.clear();
+      }, []);
+
     const navigate = useNavigate();
     const [data, setData] = useState({
         email:"",
@@ -20,9 +26,9 @@ const Login = () => {
         .then(res => {
             
             if(res.data.length > 0) {
-                navigate("/dashboard", {state: {userId: res.data[0].id}});
-                console.log("success")
-                console.log(res.data);
+                const returnedUserId = res.data[0].id;
+                sessionStorage.setItem("returnedUserId", returnedUserId);
+                navigate("/dashboard");
             }
         })
         .catch(error => {
@@ -31,28 +37,30 @@ const Login = () => {
     }
     return (
         <>
-            <div>
-                <nav className="flex justify-between bg-[#111] text-white p-4">
-                    <Link to="/">
-                        <h1 className="font-bold text-xl cursor-pointer">WeCare</h1>
-                    </Link>
-                    <p>Call Us: 123 123434443</p>
-                </nav>
+            <div className="flex flex-col justify-between min-h-screen bg-[#CAD5E2] w-full">
+            <Navbar />
 
-                <div className="bg-black w-[400px] text-white text-lg mx-auto flex flex-col justify-center ">
-                    <h1 className="text-center">User Login</h1>
-                    <form className="flex flex-col w-1/6 mx-auto">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" onChange={handleChange} className="border-2 border-black" id="email" name="email"/>
-                        <label htmlFor="pwd">Password</label>
-                        <input type="password" onChange={handleChange} className="border-2 border-black" id="pwd" name="pwd"/>
+                <div className="flex flex-col gap-4 justify-center items-center mx-auto w-5/6 sm:w-[500px] h-[250px] bg-[#000] text-white text-lg text-center rounded-lg">
+                    <h1 className="sm:text-3xl">Login As User</h1>
+                    <form className="flex flex-col gap-2 items-center">
+                        
+                        <input type="email" onChange={handleChange} className="rounded w-48 sm:w-64 h-10 text-black p-1 block" id="email" name="email" 
+                        placeholder="email"
+                        />
+                        
+        
+                        <input type="password" onChange={handleChange} className="rounded w-48 sm:w-64 h-10  text-black p-1 block" id="pwd" name="pwd"
+                        placeholder="password"
+                        />
 
-                        <button type="submit" onClick={handleSubmit}>Login</button>
+                        <button type="submit" onClick={handleSubmit}
+                        className="bg-[#06B6D4] w-24 h-10 rounded text-lg cursor-pointer">Login</button>
                     </form>
                 </div>
+                <Footer />
             </div>
         </>
     )
 }
 
-export default Login;
+export default UserLogin;

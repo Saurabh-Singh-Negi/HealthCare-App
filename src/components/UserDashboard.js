@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import {Link, useNavigate, useLocation} from "react-router-dom";
-import user from "../images/user.svg"
+import {Link, useNavigate} from "react-router-dom";
+import user from "../images/user.svg";
+import UserNavbar from "./UserDashboard";
+import Footer from "./Footer";
 
 const UserDashboard = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+  
   const [coaches, setCoaches] = useState([]);
+  const [userId, setUserId] = useState("");
   var a = 20;
   useEffect(() => {
+    let returnedUserId = sessionStorage.getItem("returnedUserId");
+    
+    if(returnedUserId == "" || returnedUserId == null) {
+      navigate('/');
+    }
+
+    else {
+      setUserId(returnedUserId);
+    }
+
     axios.get("http://localhost:3000/coaches")
     .then(res => {
       if(res.data.length > 0) {
@@ -20,35 +33,31 @@ const UserDashboard = () => {
     })
   },[]);
 
-  function handleAppointment(event) {
-    console.log(event.target.value);
-  }
 
   return (
     <>
-   
-      <div>
-      <nav className="flex justify-between bg-[#111] text-white p-4">
+      <div className="flex flex-col justify-between min-h-screen bg-[#CAD5E2] w-full">
+      <nav className="flex justify-between items-center bg-[#111] text-white p-4">
         <Link to="/">
           <h1 className="font-bold text-xl cursor-pointer">WeCare</h1>
         </Link>
         
         <div className='flex flex-row gap-4'>
-        <Link to="/">View Profile</Link>
+        <Link to="/userprofile">View Profile</Link>
         <button onClick={() => {
-          navigate("/userappointments", {state: {userId: location.state.userId}})
+          navigate("/userappointments", {state: {userId: userId}})
         }}>My Appointment</button>
         <p>Call Us: 123 123434443</p>
-        <Link to="/coachlogin">Logout</Link>
+        <Link to="/userlogin">Logout</Link>
       </div>
       </nav>
 
         
 
-        <div >
+        <div className='flex flex-col md:flex-row md:flex-wrap w-[90%] sm:w-[70%] mx-auto gap-2'>
           {coaches.map((ele) => {
               return (
-                <div key={ele.id} className="flex flex-row text-white bg-black items-center mx-auto my-4 w-1/4 border-2 border-red-600">
+                <div key={ele.id} className="flex flex-col mx-auto sm:flex-row rounded-lg font-semibold text-white bg-black items-center justify-center my-4 w-[250px] sm:w-[450px] border-2 border-red-600 cursor-pointer p-2">
                   <div>
                     <img src={user}  alt="user pic" />
                   </div>
@@ -57,11 +66,11 @@ const UserDashboard = () => {
                     <p>Coach id:{ele.id}</p>
                     <p>Mobile No.{ele.mobileNumber}</p>
                     <p>Speciality:{ele.speciality}</p>
-                    <button type='submit' className='bg-green-600' onClick={(event) => {
+                    <button type='submit' className='bg-green-600 rounded-lg h-10 font-semibold' onClick={(event) => {
 
                         navigate("/bookappointment", {state: {
                           coachId: ele.id,
-                          userId: location.state.userId
+                          userId: userId
                         }})
                       }}>Book appointment</button>
                   </div>
@@ -69,6 +78,7 @@ const UserDashboard = () => {
               ) 
             })}
         </div>
+        <Footer/>
       </div>
     </>
   )

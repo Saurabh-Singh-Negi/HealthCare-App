@@ -1,7 +1,6 @@
 import user from '../images/user.svg';
 import CoachLogin from './CoachLogin';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 const Home = () => {

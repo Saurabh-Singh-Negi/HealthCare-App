@@ -25,6 +25,19 @@
       "city": "asd",
       "state": "sadaf",
       "country": "dsa"
+    },
+    {
+      "id": 6,
+      "name": "",
+      "password": "",
+      "gender": "",
+      "dateOfBirth": "",
+      "email": "",
+      "mobileNumber": "",
+      "pincode": "",
+      "city": "",
+      "state": "",
+      "country": ""
     }
   ],
   "coaches": [
@@ -122,6 +135,15 @@
       "id": 11,
       "name": "asdasd",
       "password": "asdafasfadf",
+      "gender": "male",
+      "dateOfBirth": "1998-06-16",
+      "mobileNumber": "1234567890",
+      "speciality": "travelling"
+    },
+    {
+      "id": 12,
+      "name": "rahul",
+      "password": "rahul",
       "gender": "male",
       "dateOfBirth": "1998-06-16",
       "mobileNumber": "1234567890",

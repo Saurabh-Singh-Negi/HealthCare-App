@@ -39,7 +39,7 @@ const Coachviewprofile = () => {
           return (
             <div
               key={data.coachId}
-              className="flex rounded-lg font-semibold text-white bg-black items-center justify-center my-4 w-[500px] border-2 border-red-600 cursor-pointer">
+              className="flex flex-col sm:flex-row rounded-lg font-semibold text-white bg-black items-center justify-center my-4 w-[250px] sm:w-[500px] border-2 border-red-600 cursor-pointer">
               <div>
                 <img src={user} className="w-[200px]" alt="this is image" />
               </div>

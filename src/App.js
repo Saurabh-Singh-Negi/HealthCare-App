@@ -12,6 +12,7 @@ import ConfirmAppointment from './components/ConfirmAppointment';
 import UserAppointments from './components/UserAppointments';
 import RegisterConfirmation from './components/RegisterConfirmation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UserProfile from './components/UserProfile';
 function App() {
   return (
     <>
