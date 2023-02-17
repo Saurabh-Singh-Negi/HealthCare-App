@@ -52,8 +52,8 @@
     },
     {
       "id": 2,
-      "name": "sadsa",
-      "password": "dafdsfsdf",
+      "name": "sweety",
+      "password": "sweety",
       "gender": "male",
       "dateOfBirth": "1998-07-16",
       "mobileNumber": "8093633394",
@@ -159,32 +159,25 @@
       "id": 1
     },
     {
-      "appointmentDate": "2023-02-19",
-      "slot": "9AM to 10AM",
+      "appointmentDate": "2023-02-16",
+      "slot": "10AM to 11AM",
       "userId": 5,
       "coachId": 3,
-      "id": 9
+      "id": 12
     },
     {
-      "appointmentDate": "2023-02-19",
-      "slot": "9AM to 10AM",
+      "appointmentDate": "2023-02-16",
+      "slot": "10AM to 11AM",
       "userId": 5,
       "coachId": 3,
-      "id": 10
+      "id": 12
     },
     {
-      "appointmentDate": "2023-02-19",
-      "slot": "9AM to 10AM",
+      "appointmentDate": "2023-02-16",
+      "slot": "10AM to 11AM",
       "userId": 5,
       "coachId": 3,
-      "id": 11
-    },
-    {
-      "appointmentDate": "2023-02-19",
-      "slot": "9AM to 10AM",
-      "userId": 5,
-      "coachId": 3,
-      "id": 11
+      "id": 12
     },
     {
       "appointmentDate": "2023-02-16",

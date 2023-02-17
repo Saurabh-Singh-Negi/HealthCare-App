@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import UserDashboard from './UserDashboard';
 import axios from 'axios';
+import UserNavbar from './UserNavbar';
+import Footer from './Footer';
 
 const BookAppointment = () => {
     const location = useLocation();
@@ -45,16 +47,14 @@ const BookAppointment = () => {
 
   return (
     <>
-        <nav className="flex justify-between bg-[#111] text-white p-4">
-            <Link to="/">
-            <h1 className="font-bold text-xl cursor-pointer">WeCare</h1>
-            </Link>
-        </nav>
-        <form className='flex flex-col w-1/3 mx-auto bg-black text-white p-2 mt-2 gap-2'>
-            <label className='text-black'>Date of Appointment</label>
-            <input type="date" onChange={handleChange} className='w-1/3' name='appointmentDate'/>
+    <div className="flex flex-col justify-between min-h-screen bg-[#CAD5E2] w-full">
+        <UserNavbar />
+        <form className='flex flex-col w-1/3 mx-auto bg-black text-white p-2 mt-2 gap-2 rounded-lg text-center'>
             
-            <label>Preferrred Slot
+            <label className='text-white sm:text-xl sm:font-semibold'>Date of Appointment</label>
+            <input type="date" onChange={handleChange} className='mx-auto w-1/2 text-black rounded p-2' name='appointmentDate'/>
+            <p className='text-white sm:text-xl sm:font-semibold'>Preferrred Slot</p>
+            <label>
             <input type="radio" onClick={handleChange} value="9AM to 10AM" name='slot' /> 9AM to 10AM
             <input type="radio" onClick={handleChange} value="10AM to 11AM" name='slot' /> 10AM to 11AM
             <input type="radio" onClick={handleChange} value="11AM to 12AM" name='slot' /> 11AM to 12AM
@@ -65,10 +65,12 @@ const BookAppointment = () => {
             </label>
 
             {location.state.action != "edit" ?
-            <button type='submit' onClick={handleSubmit} className='bg-green-600'>Confirm your appointment</button>
-            :<button type='submit' onClick={handleReschedule} className='bg-green-600'>Reschedule your appointment</button>
+            <button type='submit' onClick={handleSubmit} className='bg-green-600 p-1'>Confirm your appointment</button>
+            :<button type='submit' onClick={handleReschedule} className='bg-green-600 p-1'>Reschedule your appointment</button>
         }
         </form>
+        <Footer />
+        </div>
     </>
   )
 }

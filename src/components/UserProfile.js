@@ -4,13 +4,20 @@ import UserNavbar from './UserNavbar';
 import Footer from './Footer';
 import axios from 'axios';
 import user from '../images/user.svg';
+import { useNavigate } from 'react-router-dom';
 
 const UserProfile = () => {
-    
+    const navigate = useNavigate();
     const [data,setData] = useState([]);
     const {id} = useParams();
+
     
     useEffect(() => {
+        let returnedUserId = sessionStorage.getItem("returnedUserId");
+    
+        if(returnedUserId == "" || returnedUserId == null) {
+            navigate('/');
+        }
         axios.get("http://localhost:3000/users/?id=" + id)
         .then(res => {
             setData(res.data);

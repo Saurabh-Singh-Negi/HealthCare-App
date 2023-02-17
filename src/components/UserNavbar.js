@@ -13,9 +13,8 @@ const UserNavbar = () => {
         
         <div className='flex flex-row gap-4'>
             <Link to={`/userprofile/${userId}`}>View Profile</Link>
-            <button onClick={() => {
-            navigate("/userappointments")
-            }}>My Appointment</button>
+            
+            <button onClick={() => {navigate("/userappointments")}}>My Appointment</button>
             <p>Call Us: 123 123434443</p>
             <Link to="/userlogin">Logout</Link>
         </div>
