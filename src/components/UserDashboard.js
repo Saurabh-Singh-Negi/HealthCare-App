@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 import user from "../images/user.svg";
-import UserNavbar from "./UserDashboard";
+import UserNavbar from "./UserNavbar";
 import Footer from "./Footer";
 
 const UserDashboard = () => {
@@ -37,22 +37,8 @@ const UserDashboard = () => {
   return (
     <>
       <div className="flex flex-col justify-between min-h-screen bg-[#CAD5E2] w-full">
-      <nav className="flex justify-between items-center bg-[#111] text-white p-4">
-        <Link to="/">
-          <h1 className="font-bold text-xl cursor-pointer">WeCare</h1>
-        </Link>
-        
-        <div className='flex flex-row gap-4'>
-        <Link to="/userprofile">View Profile</Link>
-        <button onClick={() => {
-          navigate("/userappointments", {state: {userId: userId}})
-        }}>My Appointment</button>
-        <p>Call Us: 123 123434443</p>
-        <Link to="/userlogin">Logout</Link>
-      </div>
-      </nav>
 
-        
+      <UserNavbar />        
 
         <div className='flex flex-col md:flex-row md:flex-wrap w-[90%] sm:w-[70%] mx-auto gap-2'>
           {coaches.map((ele) => {
