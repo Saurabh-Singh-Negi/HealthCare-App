@@ -6,12 +6,13 @@ const UserNavbar = () => {
   const navigate = useNavigate();
   const [userId, setUserId] = useState(sessionStorage.getItem("returnedUserId"));
   return (
-    <nav className="flex justify-between items-center bg-[#111] text-white p-4">
+    <div className='text-center'>
+    <nav className="flex flex-col sm:flex-row justify-between bg-[#111] text-white p-1 sm:p-4">
         <Link to="/">
           <h1 className="font-bold text-xl cursor-pointer">WeCare</h1>
         </Link>
         
-        <div className='flex flex-row gap-4'>
+        <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 items-center">
             <Link to={`/userprofile/${userId}`}>View Profile</Link>
             
             <button onClick={() => {navigate("/userappointments")}}>My Appointment</button>
@@ -19,6 +20,7 @@ const UserNavbar = () => {
             <Link to="/userlogin">Logout</Link>
         </div>
     </nav>
+    </div>
   )
 }
 

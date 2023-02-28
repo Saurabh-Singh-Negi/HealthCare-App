@@ -22,7 +22,7 @@ const BookAppointment = () => {
         event.preventDefault();
         const bookingDetails = {appointmentDate: data.appointmentDate, slot: data.slot, userId: location.state.userId, coachId: location.state.coachId};
         
-        axios.post("http://localhost:3000/bookings", bookingDetails)
+        axios.post("https://wecare-api-qqg2.onrender.com/bookings", bookingDetails)
         .then(res => {
             console.log("success", res.data);
             navigate("/confirmappointment");
@@ -36,7 +36,7 @@ const BookAppointment = () => {
         
         event.preventDefault();
         const bookingDetails = {appointmentDate: data.appointmentDate, slot: data.slot};
-        axios.patch("http://localhost:3000/bookings/"+ location.state.bookingId,  bookingDetails)
+        axios.patch("https://wecare-api-qqg2.onrender.com/bookings/"+ location.state.bookingId,  bookingDetails)
         .then(res => {
             console.log("successfuly edited", res.data);
         })

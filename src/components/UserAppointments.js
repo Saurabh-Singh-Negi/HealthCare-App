@@ -8,6 +8,7 @@ const UserAppointments = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [data, setData] = useState([]);
+    const [dataAbsent,setDataAbsent] = useState(false);
     const {id} = useParams();
     // const [status, setStatus] = useState(false);
     useEffect(() => {
@@ -21,7 +22,9 @@ const UserAppointments = () => {
         .then(res => {
             if(res.data.length > 0) {
                 setData(res.data);
-                console.log("data",res.data);
+            }
+            else {
+                setDataAbsent(true);
             }
         })
         .catch(error => {
@@ -49,8 +52,12 @@ const UserAppointments = () => {
                 <UserNavbar />
                 
                 <div className='flex flex-col md:flex-row md:flex-wrap w-[90%] mx-auto gap-2'>
-                {
-                    data.map((ele) => {
+                { dataAbsent?
+                <div className='mx-auto text-center'>
+                 <p className='text-3xl font-semibold inline-block'>You haven't booked any Appointments</p>
+                 <button className='block mx-auto bg-green-600 rounded-lg sm:h-10 font-semibold m-1 text-white p-1 sm:text-lg'  onClick={() => {navigate("/dashboard")}}>Book Appointments</button>
+                 </div>
+                 :data.map((ele) => {
                         return (
                             <div key={ele.id} className="flex flex-col rounded-lg text-white bg-black justify-center sm:font-semibold text-xl items-center mx-auto my-4 p-2 sm:p-4 w-100 md:w-1/3 border-2 border-red-600">
                                 <p>Appointment Date:</p>

@@ -22,7 +22,7 @@ const UserLogin = () => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        axios.get("http://localhost:3000/users?email=" + data.email + "&password=" + data.pwd)
+        axios.get("https://wecare-api-qqg2.onrender.com/users?email=" + data.email + "&password=" + data.pwd)
         .then(res => {
             
             if(res.data.length > 0) {

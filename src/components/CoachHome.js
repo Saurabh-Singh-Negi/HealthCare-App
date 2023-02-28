@@ -12,7 +12,7 @@ const CoachHome = () => {
     const [id, setId] = useState("");
     const [data, setData] = useState([]);
     const [status, setStatus] = useState(false);
-    
+    const [dataAbsent, setDataAbsent] = useState(false)
     useEffect(() => {
         let coachId = sessionStorage.getItem('id');
         if(coachId === "" || coachId === null) {
@@ -23,11 +23,13 @@ const CoachHome = () => {
             setId(coachId);
             setStatus(true);
         }
-        axios.get("http://localhost:3000/bookings/?coachId" + "=" + coachId)
+        axios.get("https://wecare-api-qqg2.onrender.com/bookings/?coachId" + "=" + coachId)
         .then(res => {
-            if(res.data.length>0) {
-              console.log(res.data);              
+            if(res.data.length>0) {             
               setData(res.data);
+            }
+            else {
+              setDataAbsent(true);
             }
         })
         .catch(error => {
@@ -42,7 +44,9 @@ const CoachHome = () => {
       <CoachNavbar />
 
       <div className='flex flex-col md:flex-row md:flex-wrap w-[90%] sm:w-[70%] mx-auto gap-2'>
-        {data.map((ele) => {
+        { dataAbsent?
+        <h1 className='mx-auto text-3xl font-semibold inline-block text-center'>No bookings available</h1>:
+        data.map((ele) => {
           return (
             <div key={ele.id} className="flex flex-col rounded-lg text-white bg-black justify-center sm:font-semibold text-xl items-center mx-auto my-4 h-[150px] p-2 sm:p-0 w-100 md:w-1/3 border-2 border-red-600 cursor-pointer">
               <p>Appointment: {ele.appointmentDate}</p>

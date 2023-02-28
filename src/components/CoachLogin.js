@@ -23,7 +23,7 @@ const CoachLogin = () => {
 
     if (!(id.length == 0 || pwd.length < 5 || pwd.length > 10)) {
       axios
-        .get("http://localhost:3000/coaches" + "?id=" + id + "&password=" + pwd)
+        .get("https://wecare-api-qqg2.onrender.com/coaches" + "?id=" + id + "&password=" + pwd)
         .then((res) => {
           console.log(res.data);
           if (res.data.length > 0) {

@@ -19,7 +19,7 @@ const Coachviewprofile = () => {
       setStatus(true);
     }
     axios
-      .get("http://localhost:3000/coaches/?id=" + coachId)
+      .get("https://wecare-api-qqg2.onrender.com/coaches/?id=" + coachId)
       .then((res) => {
         if (res.data.length > 0) {
           setData(res.data);

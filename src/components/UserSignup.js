@@ -30,7 +30,7 @@ const UserSignup = () => {
     function handleSubmit(event) {
         event.preventDefault();
         const userDetails = {id:"", name:data.username, password:data.pwd, gender:data.gender, dateOfBirth:data.dob, email:data.email, mobileNumber:data.mobile,pincode:data.pin,city:data.city,state:data.state,country:data.country}
-        axios.post("http://localhost:3000/users", userDetails)
+        axios.post("https://wecare-api-qqg2.onrender.com/users", userDetails)
         .then(res => {
             navigate("/registerconfirmation", {state: {
                 userId: res.data.id,

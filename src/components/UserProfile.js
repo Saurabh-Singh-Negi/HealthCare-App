@@ -18,7 +18,7 @@ const UserProfile = () => {
         if(returnedUserId == "" || returnedUserId == null) {
             navigate('/');
         }
-        axios.get("http://localhost:3000/users/?id=" + id)
+        axios.get("https://wecare-api-qqg2.onrender.com/users/?id=" + id)
         .then(res => {
             setData(res.data);
             console.log(res.data);
@@ -51,7 +51,9 @@ const UserProfile = () => {
             </div>
           );
         })}
+        <button className='block mx-auto bg-green-600 rounded-lg sm:h-10 font-semibold m-1 text-white p-1 sm:text-lg'  onClick={() => {navigate("/dashboard")}}>Book Appointments</button>
         </div>
+        
         
         <Footer/>
     </div>

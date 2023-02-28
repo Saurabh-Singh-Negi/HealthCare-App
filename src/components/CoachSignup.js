@@ -81,7 +81,7 @@ const CoachSignup = () => {
       };
       
       axios
-        .post("http://localhost:3000/coaches", newCoach)
+        .post("https://wecare-api-qqg2.onrender.com/coaches", newCoach)
         .then((res) => {
           navigate("/registerconfirmation", {state: {
             coachId: res.data.id,

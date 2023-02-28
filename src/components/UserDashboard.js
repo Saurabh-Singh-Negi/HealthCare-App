@@ -22,7 +22,7 @@ const UserDashboard = () => {
       setUserId(returnedUserId);
     }
 
-    axios.get("http://localhost:3000/coaches")
+    axios.get("https://wecare-api-qqg2.onrender.com/coaches")
     .then(res => {
       if(res.data.length > 0) {
         setCoaches(res.data);
